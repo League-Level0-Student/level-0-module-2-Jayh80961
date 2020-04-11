@@ -6,6 +6,7 @@ package _01_random._2_rock_paper_scissors;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -75,12 +76,12 @@ public class RockPaperScissors extends JPanel implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         
         //1. Run the program and play many rounds of Rock Paper Scissors. Does the computer always choose the same thing?
-
-        //2. Change the value of opponentSelection to be a random number between 0 and 2;
+    	//yes
+        //2. Change the value of random to be a random number between 0 and 2;
 	//   Don't forget to create a Random object.
-	    
-        //2. Change the value of opponentSelection to be a random number between 0 and 2; 
-        int opponentSelection = 0;
+    	Random num = new Random();
+        //2. Change the value of random to be a random number between 0 and 2; 
+        int random = num.nextInt(2);
         
         //3. Run the program again. Is the result different?
  
@@ -93,13 +94,13 @@ public class RockPaperScissors extends JPanel implements ActionListener{
         }
         
         JOptionPane.showMessageDialog(null, "You chose: " + convertSelection(selection) + ".\n"
-                    + "The computer chose: " + convertSelection(opponentSelection) + ".\n");
+                    + "The computer chose: " + convertSelection(random) + ".\n");
         
-        if(selection == opponentSelection){
+        if(selection == random){
             JOptionPane.showMessageDialog(null, "No Winner.  Play again.");
-        }else if((selection == 0 && opponentSelection == 2) || 
-                 (selection == 1 && opponentSelection == 0) ||
-                 (selection == 2 && opponentSelection == 1)){
+        }else if((selection == 0 && random == 2) || 
+                 (selection == 1 && random == 0) ||
+                 (selection == 2 && random == 1)){
             JOptionPane.showMessageDialog(null, "You Win!");
         }else{
             JOptionPane.showMessageDialog(null, "You Lose!");
