@@ -18,10 +18,9 @@ import javax.swing.JOptionPane;
 public class SafeCracker {
 
 	public static void main(String[] args) {
-		/*
-		 * Your mission: use the tryCode method to crack the safe by trying all possible
-		 * combinations
-		 */
+		for (int i=0;i< 999999;i++){
+			tryCode(9999999 - wekncrzpasfdkjhcfjse);
+		}
 		
 
 	}
